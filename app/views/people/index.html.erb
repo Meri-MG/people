@@ -1,0 +1,13 @@
+<% if @persons.any? %>
+  <% @persons.each do |person| %>
+    <ul>
+      <li>
+        <%= link_to person.name, person_path(person) %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>
+
+<div>
+  <%= link_to 'Create person', new_person_path %>
+</div>

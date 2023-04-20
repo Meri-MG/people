@@ -1,28 +1,35 @@
-<h1>
-  <%= @person.name %>
-</h1>
+<div class="people">
+  <h1>
+    <%= @person.name %>
+  </h1>
 
-<p>
-  <% if @children.any? %>
-    <h3>Children</h3>
-    <% @children.each do |child| %>
-        <%= child.name %>
-    <% end %>
-  <% end %>
-</p>
+  <div class="family-tree">
+    <div class="family">
+      <% if @children.any? %>
+        <h3>Children</h3>
+        <% @children.each do |child| %>
+            <p><%= child.name %></p>
+        <% end %>
+      <% end %>
+    </div>
 
-<p>
-  <% if @grandchildren.any? %>
-    <h3>Grandchildren</h3>
-    <% @grandchildren.each do |grandchild| %>
-      <%= grandchild.name %>
-   <% end %>
-  <% end %>
-</p>
+    <div class="family">
+      <% if @grandchildren.any? %>
+        <h3>Grandchildren</h3>
+        <% @grandchildren.each do |grandchild| %>
+          <p><%= grandchild.name %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
-<p>
-  <%= button_to "Delete",  @person, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this person?" } } %>
-</p>
-<div>
-  <%= link_to "Create a child of #{@person.name}", new_person_path(parent_id: @person.id) %>
+  <div class="buttons">
+    <div class="create-link">
+      <%= link_to "Create a child of #{@person.name}", new_person_path(parent_id: @person.id) %>
+    </div>
+    <div class="return">
+      <%= link_to "Return to dashboard", people_path %>
+    </div>
+  </div>
 </div>
+

@@ -21,6 +21,7 @@ class PeopleController < ApplicationController
     if @person.save
       redirect_to person_path(@person), notice: 'Person was successfully created.'
     else
+      flash[:error] = 'Something went wrong, please provide all the values.'
       render :new, status: :unprocessable_entity
     end
   end

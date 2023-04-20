@@ -1,13 +1,21 @@
-<% if @persons.any? %>
-  <% @persons.each do |person| %>
+<div class="people">
+  <h1>People in the list</h1>
+  <% if @persons.any? %>
     <ul>
-      <li>
-        <%= link_to person.name, person_path(person) %>
-      </li>
+      <% @persons.each do |person| %>
+        <li>
+          <p class="person-name"><%= link_to person.name, person_path(person) %></p>
+          <p>
+            <%= button_to "Delete",  @person, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this person?" } }, class: 'delete-btn' %>
+          </p>
+        </li>
+      <% end %>
     </ul>
+  <% else %>
+    <p>There is no one here yet.</p>
   <% end %>
-<% end %>
 
-<div>
-  <%= link_to 'Create person', new_person_path %>
+  <div class="create-link">
+    <%= link_to 'Create person', new_person_path %>
+  </div>
 </div>

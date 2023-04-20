@@ -1,8 +1,7 @@
 <div>
-  <%= form_with model: @person, url: people_path(parent_id: @person.parent_id) do |f| %>
+  <%= form_with model: @person, url: people_path(parent_id: @person.parent_id), class: 'person-form' do |f| %>
     <%= f.hidden_field :parent_id, value: @person&.parent_id %>
-    <%= f.label "Person's name" %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Type name..." %>
     <%= f.submit :submit %>
   <% end %>
 </div>

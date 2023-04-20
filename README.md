@@ -1,24 +1,49 @@
-# README
+# People
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+- Ruby
+- Ruby on Rails
+- PostgreSQL
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+- [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) on your local machine 
+- [Install Ruby on Rails](https://guides.rubyonrails.org/v5.1/getting_started.html)
+- Clone [this repository](https://github.com/Meri-MG/people)
+  ```
+  git clone git@github.com:Meri-MG/people.git
+  ```
+- To get started, In the root directory run:
+  ```
+  gem install bundler
+  ```
+  Then run:
+  ```
+  bundle install
+  ```
+  To start the server run: 
 
-* Configuration
+  ```
+  rails s
+  ```
+  Open the browser with `localhost:3000`
 
-* Database creation
+  
+## After installing bundle
 
-* Database initialization
+Please run the following commands `rails db:create` `rails db:migrate` `rails s`
 
-* How to run the test suite
+## Tests
+Run test with the following command
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+rails test
+```
 
-* Deployment instructions
+## Author
 
-* ...
+:woman: **Meri Gogichashvili**
+
+- [GitHub](https://github.com/Meri-MG)
+- [LinkedIn](https://www.linkedin.com/in/meri-gogichashvili/)
